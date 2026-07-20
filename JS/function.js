@@ -13,6 +13,16 @@ function addElement(){
 console.log(addElement())
 
 function greetUser(){
-    return "Hello,John ?"
+    return "Hello, John ?"
 }
+
 console.log(greetUser())
+
+
+function greetUsers(){
+    const personalName = 'Ngabo'
+    const sentence = `Hello ${personalName}?`
+    return sentence
+
+}
+ console.log(greetUsers())
