@@ -59,7 +59,9 @@ console.log(families);
 
 const fruits = ["Banana", "Orange", "Apple", "Mango"]
 const size = fruits.length
-console.log(size)
+console.log(size);
+
+
 
 
 
