@@ -53,3 +53,11 @@ function userData(name,email,phone,id) {
 }
 console.log(userData("John Ngabonziza", "John@gmail.com", "0782512832", 21991))
 
+
+function divide(){
+    const x = 2000
+    const z = 2026
+    return x - z;
+
+}
+console.log(divide())
