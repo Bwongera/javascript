@@ -92,3 +92,39 @@ console.log(checkGrade(90))
 console.log(checkGrade(20))
 console.log(checkGrade(65))
 console.log(checkGrade(32))
+
+function checkNumber(number){
+    if(number>0){
+        return 'Positive number'
+    }else if(number<0){
+        return 'Negative number'
+    }else{
+        return 'Zero'
+    }
+}
+console.log(checkNumber(5))
+console.log(checkNumber(-2))
+console.log(checkNumber(0))
+
+
+function checkVotingAge(age){
+if(age >= 18){
+    return 'You are eligible to vote.'
+}else{
+ return 'You are not eligible to vote.'  
+}
+ 
+}
+console.log(checkVotingAge(18))
+console.log(checkVotingAge(19))
+console.log(checkVotingAge(16))
+
+function checkResult(mark){
+    if(mark >= 50){
+        return 'You passed'
+    }else{
+        return 'You failed'
+    }
+}
+console.log(checkResult(60))
+console.log(checkResult(49))
