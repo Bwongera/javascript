@@ -65,6 +65,7 @@ function divide() {
 }
 console.log(divide())
 
+
 function calculateTotal(price) {
     function calculatTax() {
         const tax = price * 10 / 100
@@ -74,6 +75,7 @@ function calculateTotal(price) {
     return price + calculatTax()
 }
 console.log(calculateTotal(100))
+
 
 function checkGrade(mark) {
     if (mark >= 80) {
@@ -92,6 +94,7 @@ console.log(checkGrade(90))
 console.log(checkGrade(20))
 console.log(checkGrade(65))
 console.log(checkGrade(32))
+
 
 function checkNumber(number){
     if(number>0){
@@ -119,6 +122,7 @@ console.log(checkVotingAge(18))
 console.log(checkVotingAge(19))
 console.log(checkVotingAge(16))
 
+
 function checkResult(mark){
     if(mark >= 50){
         return 'You passed'
@@ -128,3 +132,23 @@ function checkResult(mark){
 }
 console.log(checkResult(60))
 console.log(checkResult(49))
+
+
+const x = 2**10
+console.log(x)
+
+
+let z = 5;
+z++
+console.log(z++)
+
+
+let y = 5;
+y--
+console.log(y--)
+
+
+
+
+
+
