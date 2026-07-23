@@ -62,6 +62,45 @@ const size = fruits.length
 console.log(size);
 
 
+let courses = ["Figma", "Linux", "HTML", "CSS", "JavaScript"]
+console.log(courses)
+
+courses.push("Git")
+console.log(courses)
+
+courses.pop()
+console.log(courses)
+
+courses.unshift("Git")
+console.log(courses)
+
+courses.shift()
+console.log(courses)
+
+console.log(courses.length)
+
+// console.log(courses.toString())
+console.log(courses.join(" | "))
+
+
+function displayCourses(coursesArray) {
+    return courses
+}
+console.log(displayCourses(courses))
+
+
+function displayCourses(allCourses) {
+    console.log(allCourses);
+   return allCourses
+}
+displayCourses(courses)
+
+const words = [ 'Hey', 'Im', 'John', 'a', 'good', 'student.']
+const sentence = words.join(" ")
+console.log(sentence)
+
+
+
 
 
 
