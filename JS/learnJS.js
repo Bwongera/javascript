@@ -95,7 +95,7 @@ function displayCourses(allCourses) {
 }
 displayCourses(courses)
 
-const words = [ 'Hey', 'Im', 'John', 'a', 'good', 'student.']
+const words = [ 'Hey', "I'm", 'John', 'a', 'good', 'student.']
 const sentence = words.join(" ")
 console.log(sentence)
 
