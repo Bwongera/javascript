@@ -117,7 +117,12 @@ const students = [
     'Bukuru',
     'Frank',
     'Mutoni',
-    'John'
+    'John',
+    'Imani',
+    'Edmon',
+    'Fiston',
+    'Clemence',
+    'Faustin'
 ]
 // console.log( '1.','Manzi', '2.','Delphine', '3.','Bikorimana', '4.','Claude', '5.','Elie', '6.','Egide', '7.','Justin','8.','Grace', '9.','Mutoni', '10.','Opera','11.','Jouyeuse', '12.','Sammy', '13.','Bukuru', '14.','Frank','15.','John');
 
@@ -140,12 +145,77 @@ const students = [
 // for loop method(initialization; condition; action)
 
 
-for( let index = 0; index < students.length; index++) {
-const number = index + 1;
-const eachStudent = students[index]
-console.log(`${number}. ${eachStudent}`);
+// for( let index = 0; index < students.length; index++) {
+// const number = index + 1;
+// const eachStudent = students[index]
+// console.log(`${number}. ${eachStudent}`);
 
+// }
+
+
+// let products = [
+//     'Sugar',
+//     'Rice',
+//     'Liquid Soap',
+//     'Cooking Oil',
+//     'Milk',
+//     'Bread',
+//     'Eggs',
+//     'Tea'
+
+// ]
+// // console.log(products)
+
+// let prices = [
+// 'Rw 4,000',
+// 'Rw 2,500',
+// 'Rw 2,100',
+// 'Rw 7,000',
+// 'Rw 1,500',
+// 'Rw 5,00',
+// 'Rw 3,200',
+// 'Rw 2,000'
+
+
+// ]
+
+// for(let index = 0; index < products.length; index++){
+//     console.log(`${index+1}.${products[index]} = ${prices[index]}`)
+// }
+
+
+
+let products = [
+  'Sugar',
+  'Rice',
+  'Liquid Soap',
+  'Cooking Oil',
+  'Milk',
+  'Bread',
+  'Eggs',
+  'Tea'
+];
+
+let prices = [
+  4000,
+  2500,
+  2100,
+  7000,
+  1500,
+  500,
+  3200,
+  2000
+];
+
+let total = 0;
+
+for (let i = 0; i < prices.length; i++) {
+    console.log(`${i + 1}. ${products[i]} - RWF ${prices[i]}`);
+    total += prices[i];
 }
+
+console.log("--------------------");
+console.log(`Total: Rw ${total}`);
 
 
 
