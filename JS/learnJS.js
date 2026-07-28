@@ -185,37 +185,49 @@ const students = [
 
 
 
-let products = [
-  'Sugar',
-  'Rice',
-  'Liquid Soap',
-  'Cooking Oil',
-  'Milk',
-  'Bread',
-  'Eggs',
-  'Tea'
-];
+// let products = [
+//   'Sugar',
+//   'Rice',
+//   'Liquid Soap',
+//   'Cooking Oil',
+//   'Milk',
+//   'Bread',
+//   'Eggs',
+//   'Tea'
+// ];
 
-let prices = [
-  4000,
-  2500,
-  2100,
-  7000,
-  1500,
-  500,
-  3200,
-  2000
-];
+// let prices = [
+//   4000,
+//   2500,
+//   2100,
+//   7000,
+//   1500,
+//   500,
+//   3200,
+//   2000
+// ];
 
-let total = 0;
+// let total = 0;
 
-for (let i = 0; i < prices.length; i++) {
-    console.log(`${i + 1}. ${products[i]} - RWF ${prices[i]}`);
-    total += prices[i];
+// for (let i = 0; i < prices.length; i++) {
+//     console.log(`${i + 1}. ${products[i]} = RWF ${prices[i]}`);
+//     total += prices[i];
+// }
+
+// console.log("--------------------");
+// console.log(`Total: Rw ${total}`);
+
+
+
+const correctPassword = '123@2026';
+const Passwords = ['123@2020', '123@2021', '123@2022', '123@2023', '123@2024','123@2025', '123@2026']
+
+for (let index = 0; index < Passwords.length; index++) {
+  console.log(Passwords[index]);
+
 }
 
-console.log("--------------------");
-console.log(`Total: Rw ${total}`);
+
 
 
 
