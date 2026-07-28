@@ -102,27 +102,27 @@
 
 
 
-const students = [ 
-    'Manzi Mugisha',
-    'Delphine',
-    'Bikorimana',
-    'Claude',
-    'Elie',
-    'Egide',
-    'Justin',
-    'Grace',
-    'Opera',
-    'Jouyeuse',
-    'Sammy',
-    'Bukuru',
-    'Frank',
-    'Mutoni',
-    'John',
-    'Imani',
-    'Edmon',
-    'Fiston',
-    'Clemence',
-    'Faustin'
+const students = [
+  'Manzi Mugisha',
+  'Delphine',
+  'Bikorimana',
+  'Claude',
+  'Elie',
+  'Egide',
+  'Justin',
+  'Grace',
+  'Opera',
+  'Jouyeuse',
+  'Sammy',
+  'Bukuru',
+  'Frank',
+  'Mutoni',
+  'John',
+  'Imani',
+  'Edmon',
+  'Fiston',
+  'Clemence',
+  'Faustin'
 ]
 // console.log( '1.','Manzi', '2.','Delphine', '3.','Bikorimana', '4.','Claude', '5.','Elie', '6.','Egide', '7.','Justin','8.','Grace', '9.','Mutoni', '10.','Opera','11.','Jouyeuse', '12.','Sammy', '13.','Bukuru', '14.','Frank','15.','John');
 
@@ -219,13 +219,15 @@ const students = [
 
 
 
-const correctPassword = '123@2026';
-const Passwords = ['123@2020', '123@2021', '123@2022', '123@2023', '123@2024','123@2025', '123@2026']
+const CorrectPassword = '123@2024';
+const passwords = ['123@2020', '123@2021', '123@2022', '123@2023', '123@2024', '123@2025', '123@2026']
 
-for (let index = 0; index < Passwords.length; index++) {
-  console.log(Passwords[index]);
-
+let index = 0;
+while (passwords[index] !== CorrectPassword) {
+  console.log(`Incorrect Password: ${passwords[index]}`);
+  index++
 }
+console.log(`Correct Password: ${CorrectPassword}`);
 
 
 
