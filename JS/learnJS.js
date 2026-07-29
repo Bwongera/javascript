@@ -231,6 +231,27 @@ console.log(`Correct Password: ${CorrectPassword}`);
 
 
 
+const seats = [
+  'reserved',
+  'available',
+  'occupied',
+  'reserved',
+  'reserved',
+  'reserved'
+
+]
+let index = 0;
+
+while (seats[index] !== 'available') {
+  console.log(`Checking seat ${index + 1} : ${seats[index]}`)
+  index++;
+}
+console.log(`Seat ${index + 1} is available. Booking can proceed`)
+console.log(`Found an available seat after checking ${index + 1} seats.`)
+
+
+
+
 
 
 

@@ -21,3 +21,24 @@
 // console.log(women.join(" , "))
 
 // console.log(women.length)
+
+
+// const Seat = [
+//   'reserved',
+//   'reserved',
+//   'occupied',
+//   'occupied',
+//   'available',
+//   'available'
+// ]
+
+
+// for (let seat = 1; seat <= 6; seat++) {
+//     if (seat <= 2) {
+//         console.log(`Seat ${seat} = Reserved`);
+//     } else if (seat <= 4) {
+//         console.log(`Seat ${seat} = Occupied`);
+//     } else {
+//         console.log(`Seat ${seat} = Available`);
+//     }
+// }
