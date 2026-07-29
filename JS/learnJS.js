@@ -102,28 +102,28 @@
 
 
 
-const students = [
-  'Manzi Mugisha',
-  'Delphine',
-  'Bikorimana',
-  'Claude',
-  'Elie',
-  'Egide',
-  'Justin',
-  'Grace',
-  'Opera',
-  'Jouyeuse',
-  'Sammy',
-  'Bukuru',
-  'Frank',
-  'Mutoni',
-  'John',
-  'Imani',
-  'Edmon',
-  'Fiston',
-  'Clemence',
-  'Faustin'
-]
+// const students = [
+//   'Manzi Mugisha',
+//   'Delphine',
+//   'Bikorimana',
+//   'Claude',
+//   'Elie',
+//   'Egide',
+//   'Justin',
+//   'Grace',
+//   'Opera',
+//   'Jouyeuse',
+//   'Sammy',
+//   'Bukuru',
+//   'Frank',
+//   'Mutoni',
+//   'John',
+//   'Imani',
+//   'Edmon',
+//   'Fiston',
+//   'Clemence',
+//   'Faustin'
+// ]
 // console.log( '1.','Manzi', '2.','Delphine', '3.','Bikorimana', '4.','Claude', '5.','Elie', '6.','Egide', '7.','Justin','8.','Grace', '9.','Mutoni', '10.','Opera','11.','Jouyeuse', '12.','Sammy', '13.','Bukuru', '14.','Frank','15.','John');
 
 // console.log("0.",students[0]);
@@ -219,39 +219,90 @@ const students = [
 
 
 
-const CorrectPassword = '123@2024';
-const passwords = ['123@2020', '123@2021', '123@2022', '123@2023', '123@2024', '123@2025', '123@2026']
+// const CorrectPassword = '123@2024';
+// const passwords = ['123@2020', '123@2021', '123@2022', '123@2023', '123@2024', '123@2025', '123@2026']
 
-let index = 0;
-while (passwords[index] !== CorrectPassword) {
-  console.log(`Incorrect Password: ${passwords[index]}`);
-  index++
-}
-console.log(`Correct Password: ${CorrectPassword}`);
+// let index = 0;
+// while (passwords[index] !== CorrectPassword) {
+//   console.log(`Incorrect Password: ${passwords[index]}`);
+//   index++
+// }
+// console.log(`Correct Password: ${CorrectPassword}`);
+
+
+
+// const seats = [
+//   'reserved',
+//   'available',
+//   'occupied',
+//   'reserved',
+//   'reserved',
+//   'reserved'
+
+// ]
+// let index = 0;
+
+// while (seats[index] !== 'available') {
+//   console.log(`Checking seat ${index + 1} : ${seats[index]}`);
+//   index++;
+// }
+// console.log(`Seat ${index + 1} is available. Booking can proceed`)
+// console.log(`Found an available seat after checking ${index + 1} seats.`)
+
+
+
+const students = [
+  'Manzi Mugisha',
+  'Delphine',
+  'Bikorimana',
+  'Claude',
+  'Elie',
+  'Egide',
+  'Justin',
+  'Grace',
+  'Opera',
+  'Jouyeuse',
+  'Sammy',
+  'Bukuru',
+  'Frank',
+  'Mutoni',
+  'John'
+]
+//For Loop
+//While Loop
+//For Each Loop
+
+
+students.forEach((student, index) => {
+  console.log(`${index + 1}. ${student}`)
+})
+
+
 
 
 
 const seats = [
-  'reserved',
-  'available',
-  'occupied',
-  'reserved',
-  'reserved',
-  'reserved'
+  { owner: "MANZI", price: 100, category: "VVIP", status: "OCCUPIED" },
+  { owner: "MUTONI", price: 25, category: "REGULAR", status: "RESERVED" },
+  { owner: "EGIDE", price: 50, category: "VIP", status: "RESERVED" },
+  { owner: null, price: 100, category: "VVIP", status: "AVAILABLE" },
+  { owner: "JUSTIN", price: 25, category: "REGULAR", status: "OCCUPIED" }
+];
 
-]
-let index = 0;
+let totalPrice = 0;
 
-while (seats[index] !== 'available') {
-  console.log(`Checking seat ${index + 1} : ${seats[index]}`)
-  index++;
+for (let i = 0; i < seats.length; i++) {
+
+    if (
+        seats[i].status === "OCCUPIED" ||
+        seats[i].status === "RESERVED"
+    ) {
+        totalPrice += seats[i].price;
+    }
+
 }
-console.log(`Seat ${index + 1} is available. Booking can proceed`)
-console.log(`Found an available seat after checking ${index + 1} seats.`)
 
-
-
-
+console.log("Total Price:", totalPrice);
 
 
 
