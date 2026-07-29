@@ -251,33 +251,58 @@
 
 
 
-const students = [
-  'Manzi Mugisha',
-  'Delphine',
-  'Bikorimana',
-  'Claude',
-  'Elie',
-  'Egide',
-  'Justin',
-  'Grace',
-  'Opera',
-  'Jouyeuse',
-  'Sammy',
-  'Bukuru',
-  'Frank',
-  'Mutoni',
-  'John'
-]
-//For Loop
-//While Loop
-//For Each Loop
+// const students = [
+//   'Manzi Mugisha',
+//   'Delphine',
+//   'Bikorimana',
+//   'Claude',
+//   'Elie',
+//   'Egide',
+//   'Justin',
+//   'Grace',
+//   'Opera',
+//   'Jouyeuse',
+//   'Sammy',
+//   'Bukuru',
+//   'Frank',
+//   'Mutoni',
+//   'John'
+// ]
+// //For Loop
+// //While Loop
+// //For Each Loop
 
 
-students.forEach((student, index) => {
-  console.log(`${index + 1}. ${student}`)
-})
+// students.forEach((student, index) => {
+//   console.log(`${index + 1}. ${student}`)
+// })
 
 
+
+
+
+// const seats = [
+//   { owner: "MANZI", price: '$100', category: "VVIP", status: "OCCUPIED" },
+//   { owner: "MUTONI", price: '$25', category: "REGULAR", status: "RESERVED" },
+//   { owner: "EGIDE", price: '$50', category: "VIP", status: "RESERVED" },
+//   { owner: null, price: '$100', category: "VVIP", status: "AVAILABLE" },
+//   { owner: "JUSTIN", price: '$25', category: "REGULAR", status: "OCCUPIED" },
+// ];
+
+// let personMessage;
+// let seatMessage;
+
+// seats.forEach((seat, index) => {
+//   if (seat.owner === 'MANZI') {
+//     personMessage = `Hey Jose, ${seat.owner} already entered and his in ${seat.category} of ${seat.price}.`
+//   }
+//   if (seat.status === "AVAILABLE") {
+//     seatMessage = `Please check the seat ${index + 1} is ${seat.status}.`
+//   }
+
+// })
+
+// console.log(`${personMessage} ${seatMessage}`)
 
 
 
@@ -286,23 +311,15 @@ const seats = [
   { owner: "MUTONI", price: 25, category: "REGULAR", status: "RESERVED" },
   { owner: "EGIDE", price: 50, category: "VIP", status: "RESERVED" },
   { owner: null, price: 100, category: "VVIP", status: "AVAILABLE" },
-  { owner: "JUSTIN", price: 25, category: "REGULAR", status: "OCCUPIED" }
+  { owner: "JUSTIN", price: 25, category: "REGULAR", status: "OCCUPIED" },
 ];
 
 let totalPrice = 0;
-
-for (let i = 0; i < seats.length; i++) {
-
-    if (
-        seats[i].status === "OCCUPIED" ||
-        seats[i].status === "RESERVED"
-    ) {
-        totalPrice += seats[i].price;
-    }
-
-}
-
-console.log("Total Price:", totalPrice);
-
+seats.forEach((seat) =>{
+  if (seat.status !== 'AVAILABLE'){
+    totalPrice = totalPrice + seat.price
+  }
+});
+console.log(`$${totalPrice}`);
 
 
