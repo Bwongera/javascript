@@ -347,21 +347,52 @@
 // })
 
 
-const students = [
-  { name: 'JOHN', marks: 90 },
-  { name: 'OPERA', marks: 85 },
-  { name: 'JOSE', marks: 87 },
-  { name: 'SANDRA', marks: 80 },
-  { name: 'SAMMY', marks: 75 }
-]
-// marks.map((mark, index) => {
-//   console.log(`${index + 1}. ${mark.name},`)
+// const students = [
+//   { name: 'JOHN', marks: 90 },
+//   { name: 'OPERA', marks: 85 },
+//   { name: 'JOSE', marks: 87 },
+//   { name: 'SANDRA', marks: 80 },
+//   { name: 'SAMMY', marks: 75 }
+// ]
+// // marks.map((mark, index) => {
+// //   console.log(`${index + 1}. ${mark.name},`)
+// // });
+
+// const updateMarks = students.map((student) => {
+//   return { name: student.name, marks: `${student.marks}/100`, comment: '' }
 // });
 
-const updateMarks = students.map((student) => {
-  return { name: student.name, marks: `${student.marks}/100`, comment: '' }
-});
-
-console.log(updateMarks);
+// console.log(updateMarks);
 
 
+
+const presidents = [
+    {
+        name: "Paul Kagame",
+        country: "Rwanda"
+    },
+    {
+        name: "William Ruto",
+        country: "Kenya"
+    },
+    {
+        name: "Yoweri Museveni",
+        country: "Uganda"
+    },
+    {
+        name: "Samia Suluhu Hassan",
+        country: "Tanzania"
+    },
+    {
+        name: "Dusenge Sammy",
+        country: "Kigali"
+    }
+];
+
+// for (let index = 0; index < presidents.length; index++) {
+//     console.log( (index + 1), "President:", presidents[index].name, "Country:", presidents[index].country);}
+
+       
+for (let index = 0; index < presidents.length; index++) {
+    console.log(`${index + 1}. President: ${presidents[index].name}, Country: ${presidents[index].country}.`);}
+       
