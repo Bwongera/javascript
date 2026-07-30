@@ -306,20 +306,62 @@
 
 
 
-const seats = [
-  { owner: "MANZI", price: 100, category: "VVIP", status: "OCCUPIED" },
-  { owner: "MUTONI", price: 25, category: "REGULAR", status: "RESERVED" },
-  { owner: "EGIDE", price: 50, category: "VIP", status: "RESERVED" },
-  { owner: null, price: 100, category: "VVIP", status: "AVAILABLE" },
-  { owner: "JUSTIN", price: 25, category: "REGULAR", status: "OCCUPIED" },
-];
+// const seats = [
+//   { owner: "MANZI", price: 100, category: "VVIP", status: "OCCUPIED" },
+//   { owner: "MUTONI", price: 25, category: "REGULAR", status: "RESERVED" },
+//   { owner: "EGIDE", price: 50, category: "VIP", status: "RESERVED" },
+//   { owner: null, price: 100, category: "VVIP", status: "AVAILABLE" },
+//   { owner: "JUSTIN", price: 25, category: "REGULAR", status: "OCCUPIED" },
+// ];
 
-let totalPrice = 0;
-seats.forEach((seat) =>{
-  if (seat.status !== 'AVAILABLE'){
-    totalPrice = totalPrice + seat.price
-  }
+// let totalPrice = 0;
+// seats.forEach((seat) =>{
+//   if (seat.status !== 'AVAILABLE'){
+//     totalPrice = totalPrice + seat.price
+//   }
+// });
+// console.log(`$${totalPrice}`);
+
+
+
+// const names = [
+//   'MANZI',
+//   'DELPHINE',
+//   'BIKORIMANA',
+//   'CLAUDE',
+//   'ELIE',
+//   'EGIDE',
+//   'JUSTIN',
+//   'GRACE',
+//   'OPERA',
+//   'JOSE',
+//   'SAMMY',
+//   'BUKURU',
+//   'FRANK',
+//   'MUTONI',
+//   'JOHN'
+// ]
+
+// names.map((name, index) =>{
+//   console.log('Welcome', " ", name , '', 'to' , 'the coding school.')
+// })
+
+
+const students = [
+  { name: 'JOHN', marks: 90 },
+  { name: 'OPERA', marks: 85 },
+  { name: 'JOSE', marks: 87 },
+  { name: 'SANDRA', marks: 80 },
+  { name: 'SAMMY', marks: 75 }
+]
+// marks.map((mark, index) => {
+//   console.log(`${index + 1}. ${mark.name},`)
+// });
+
+const updateMarks = students.map((student) => {
+  return { name: student.name, marks: `${student.marks}/100`, comment: '' }
 });
-console.log(`$${totalPrice}`);
+
+console.log(updateMarks);
 
 
