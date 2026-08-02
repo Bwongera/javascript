@@ -366,33 +366,29 @@
 
 
 
-const presidents = [
-    {
-        name: "Paul Kagame",
-        country: "Rwanda"
-    },
-    {
-        name: "William Ruto",
-        country: "Kenya"
-    },
-    {
-        name: "Yoweri Museveni",
-        country: "Uganda"
-    },
-    {
-        name: "Samia Suluhu Hassan",
-        country: "Tanzania"
-    },
-    {
-        name: "Dusenge Sammy",
-        country: "Kigali"
-    }
-];
-
+// const presidents = [
+//     {
+//         name: "Paul Kagame",
+//         country: "Rwanda"
+//     },
+//     {
+//         name: "William Ruto",
+//         country: "Kenya"
+//     },
+//     {
+//         name: "Yoweri Museveni",
+//         country: "Uganda"
+//     },
+//     {
+//         name: "Samia Suluhu Hassan",
+//         country: "Tanzania"
+//     },
+//     {
+//         name: "Dusenge Sammy",
+//         country: "Kigali"
+//     }
+// ];
+      
 // for (let index = 0; index < presidents.length; index++) {
-//     console.log( (index + 1), "President:", presidents[index].name, "Country:", presidents[index].country);}
-
-       
-for (let index = 0; index < presidents.length; index++) {
-    console.log(`${index + 1}. President: ${presidents[index].name}, Country: ${presidents[index].country}.`);}
+//     console.log(`${index + 1}. President ${presidents[index].name}, Country: ${presidents[index].country}.`);}
        
