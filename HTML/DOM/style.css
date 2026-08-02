@@ -1,0 +1,33 @@
+h1{
+    text-align: center;
+    font-size: 90px;
+    /* color: blue; */
+}
+
+h2{
+    text-align: center;
+    color: blue;
+}
+
+p{
+    color: rgba(16, 16, 16, 0.946);
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    width: 80px;
+    font-size: 10px;
+    gap: 10px;
+}
+div{
+    padding: 16px 0px;
+    display: flex;
+    gap: 15px;
+}
+img{
+    width: 40px;
+    height: 40px;
+}
