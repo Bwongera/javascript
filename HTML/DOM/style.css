@@ -1,6 +1,6 @@
 h1{
     text-align: center;
-    font-size: 90px;
+    font-size: 60px;
     /* color: blue; */
 }
 
@@ -30,4 +30,69 @@ div{
 img{
     width: 40px;
     height: 40px;
+}
+
+#table-score{
+    display: flex;
+    justify-content: center;
+    color: rgb(38, 6, 243);
+
+}
+#score{
+    display: flex;
+    outline: none;
+   
+}
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Enter-mark-form{
+    width: 200px;
+    background-color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    gap: 10PX;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+input{
+    width: 88%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-top: 4px;
+    padding: 2px 10px;
+    font-size: 10px;
+}
+
+label{
+    font-size: 10px;
+}
+
+.form-title{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.form-button{
+    border: none;
+    outline: none;
+    width: 97%;
+    border-radius: 5px;
+    background-color: #183DB9;
+    margin-bottom: 10px;
+    color: aliceblue;
+    font-weight: bold;
+    padding: 4px;
+}
+
+.form-span{
+    font-size: 8px;
 }

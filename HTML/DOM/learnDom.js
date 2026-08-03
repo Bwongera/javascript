@@ -17,8 +17,8 @@ paragraph.innerHTML = 'The CECAFA Kagame Cup is an annual regional club football
 
 let button = document.querySelector('button')
 let result = document.querySelector('span')
-button.addEventListener('click', function(){
-result.innerHTML = "We don't have other more description"
+button.addEventListener('click', function () {
+    result.innerHTML = "We don't have other more description"
 }
 )
 
@@ -29,12 +29,37 @@ let off = document.querySelector("#off-image")
 let onbutton = document.querySelector(".on")
 let offbutton = document.querySelector(".off")
 
-onbutton.addEventListener("click", function(){
+onbutton.addEventListener("click", function () {
     on.style.display = "block"
     off.style.display = "none"
 })
 
-offbutton.addEventListener("click",function(){
+offbutton.addEventListener("click", function () {
     on.style.display = "none"
     off.style.display = "block"
+})
+
+
+let form = document.querySelector("#Enter-mark-form");
+let inputValue = document.querySelector("#marks");
+let answer = document.querySelector(".form-span")
+
+form.addEventListener("submit", function (e){
+    e.preventDefault()
+    
+    const mark = inputValue.value
+    if (mark === ""){
+        answer.innerHTML = "Please enter your marks";
+        answer.style.color = "red"
+    }else if (mark >= 80){
+        answer.innerHTML = "Excellent";
+        answer.style.color = "green"
+
+    }else if (mark <=79 && mark >= 50) {
+        answer.innerHTML = "Good";
+        answer.style.color = "orange"
+    }else if (mark <50) {
+        answer.innerHTML = "Fail";
+        answer.style.color = "red"
+    }
 })
