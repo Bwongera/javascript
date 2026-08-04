@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #4b0082, #7b2cbf);
+    height: 100vh;
+    display: flex;
+    
+}
+
+.form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#palindrome-checker {
+    background: #ffffff;
+    /* width: 400px; */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.form-title {
+    color: #4b0082;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+#text-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 17px;
+    border: 2px solid #7b2cbf;
+    border-radius: 8px;
+    outline: none;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+#text-input:focus {
+    border-color: #4b0082;
+    box-shadow: 0 0 8px rgba(123, 44, 191, 0.4);
+}
+
+.form-button {
+    width: 100px;
+    height: 35px;
+    margin-top: 20px;
+    margin-left: 0;
+    display: block;
+    background: #7b2cbf;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.form-button:hover {
+    background: #5a189a;
+    transform: translateY(-2px);
+}
+
+#result {
+    display: block;
+    margin-top: 20px;
+    margin-left: 0;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    word-wrap: break-word;
+}
