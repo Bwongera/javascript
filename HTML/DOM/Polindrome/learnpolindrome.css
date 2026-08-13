@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #4b0082, #7b2cbf);
+    background: white;
     height: 100vh;
     display: flex;
     
@@ -21,7 +21,7 @@ body {
 
 #palindrome-checker {
     background: #ffffff;
-    /* width: 400px; */
+    width: 400px;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
@@ -29,16 +29,18 @@ body {
 }
 
 .form-title {
-    color: #4b0082;
+    background-color: #333;
+    color: white;
     margin-bottom: 25px;
     font-size: 28px;
+    border-radius: 5px;
 }
 
 #text-input {
     width: 100%;
     padding: 12px;
     font-size: 17px;
-    border: 2px solid #7b2cbf;
+    border: 1px solid black;
     border-radius: 8px;
     outline: none;
     margin-bottom: 20px;
@@ -46,21 +48,21 @@ body {
 }
 
 #text-input:focus {
-    border-color: #4b0082;
+    border-color: black;
     box-shadow: 0 0 8px rgba(123, 44, 191, 0.4);
 }
 
 .form-button {
-    width: 100px;
+    width: 80px;
     height: 35px;
     margin-top: 20px;
     margin-left: 0;
     display: block;
-    background: #7b2cbf;
+    background: #333;
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -81,3 +83,4 @@ body {
     color: #333;
     word-wrap: break-word;
 }
+

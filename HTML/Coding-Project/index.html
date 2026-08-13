@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>All-in-One Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>All-in-One Calculator</h1>
+
+        <div class="calculator">
+
+
+            <div class="tabs">
+                <button class="tab active" onclick="showCalculator('basic')">
+                    Basic
+                </button>
+
+                <button class="tab" onclick="showCalculator('loan')">
+                    Loan
+                </button>
+
+                <button class="tab" onclick="showCalculator('grade')">
+                    Grade
+                </button>
+
+                <button class="tab" onclick="showCalculator('percentage')">
+                    Percentage
+                </button>
+            </div>
+
+            <section id="basic" class="calculator-section active">
+
+                <h2>Basic Calculator</h2>
+
+                <input type="text" id="display" placeholder="0" readonly>
+
+                <div class="buttons">
+
+                    <button onclick="clearDisplay()" class="clear">
+                        C
+                    </button>
+
+                    <button onclick="deleteLast()">
+                        DEL
+                    </button>
+
+                    <button onclick="appendValue('%')">
+                        %
+                    </button>
+
+                    <button onclick="appendValue('/')" class="operator">
+                        ÷
+                    </button>
+
+
+                    <button onclick="appendValue('7')">7</button>
+                    <button onclick="appendValue('8')">8</button>
+                    <button onclick="appendValue('9')">9</button>
+
+                    <button onclick="appendValue('*')" class="operator">
+                        ×
+                    </button>
+
+
+                    <button onclick="appendValue('4')">4</button>
+                    <button onclick="appendValue('5')">5</button>
+                    <button onclick="appendValue('6')">6</button>
+
+                    <button onclick="appendValue('-')" class="operator">
+                        −
+                    </button>
+
+
+                    <button onclick="appendValue('1')">1</button>
+                    <button onclick="appendValue('2')">2</button>
+                    <button onclick="appendValue('3')">3</button>
+
+                    <button onclick="appendValue('+')" class="operator">
+                        +
+                    </button>
+
+
+                    <button onclick="appendValue('0')" class="zero">
+                        0
+                    </button>
+
+                    <button onclick="appendValue('.')">
+                        .
+                    </button>
+
+                    <button onclick="calculate()" class="equal">
+                        =
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <section id="loan" class="calculator-section">
+
+                <h2>Loan Calculator</h2>
+
+                <label>Loan Amount</label>
+
+                <input type="number" id="loanAmount" placeholder="Example: 1000000">
+
+
+                <label>Annual Interest Rate (%)</label>
+
+                <input type="number" id="interestRate" placeholder="Example: 10">
+                <label>Loan Period (Months)</label>
+
+                <input type="number" id="loanMonths" placeholder="Example: 12">
+
+
+                <button onclick="calculateLoan()" class="calculate-btn">
+                    Calculate Loan
+                </button>
+
+
+                <div id="loanResult" class="result">
+                    Result will appear here
+                </div>
+
+            </section>
+
+
+
+            <section id="grade" class="calculator-section">
+
+                <h2>Student Grade Calculator</h2>
+
+                <label>Student Name</label>
+
+                <input type="text" id="studentName" placeholder="Enter student name">
+
+
+                <label>Subject 1</label>
+
+                <input type="number" id="subject1" placeholder="0 - 100">
+
+
+                <label>Subject 2</label>
+
+                <input type="number" id="subject2" placeholder="0 - 100">
+
+
+                <label>Subject 3</label>
+
+                <input type="number" id="subject3" placeholder="0 - 100">
+
+
+                <button onclick="calculateGrade()" class="calculate-btn">
+                    Calculate Grade
+                </button>
+
+
+                <div id="gradeResult" class="result">
+                    Result will appear here
+                </div>
+
+            </section>
+
+
+
+            <section id="percentage" class="calculator-section">
+
+                <h2>Percentage Calculator</h2>
+
+                <label>Percentage (%)</label>
+
+                <input type="number" id="percentage" placeholder="Example: 20">
+
+
+                <label>Number</label>
+
+                <input type="number" id="number" placeholder="Example: 50000">
+
+
+                <button onclick="calculatePercentage()" class="calculate-btn">
+                    Calculate Percentage
+                </button>
+
+
+                <div id="percentageResult" class="result">
+                    Result will appear here
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
