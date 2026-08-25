@@ -640,6 +640,19 @@ nav {
 }
 
 
+/* =========================
+   SONG ACTIONS
+========================= */
+
+.song-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 3px;
+}
+
+
 /* FAVORITE */
 
 .favorite {
@@ -660,6 +673,34 @@ nav {
 .favorite:hover,
 .favorite.active {
     color: #f0abfc;
+}
+
+
+/* DELETE */
+
+.delete-song {
+    width: 32px;
+    height: 32px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--muted);
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    border-radius: 7px;
+
+    transition: 0.2s;
+}
+
+.delete-song:hover {
+    color: #ff6b81;
+
+    background: rgba(255, 107, 129, 0.1);
 }
 
 
@@ -797,4 +838,9 @@ nav {
     .playlist-header {
         align-items: flex-end;
     }
+
+    .song-actions {
+        gap: 0;
+    }
+
 }

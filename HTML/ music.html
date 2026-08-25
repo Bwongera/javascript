@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>VibeVault - Music Player</title>
     <link rel="stylesheet" href="../css/music.css">
 </head>
@@ -14,22 +15,22 @@
 
         <!-- SIDEBAR -->
         <aside class="sidebar">
-
             <div class="logo">
-                <div class="logo-icon">♪</div>
-
+                <div class="logo-icon">
+                    ♪
+                </div>
                 <div>
                     <h1>VibeVault</h1>
                     <span>Music Player</span>
                 </div>
             </div>
 
+
             <nav>
                 <button class="nav-btn active" id="libraryBtn">
                     <span>⌂</span>
                     Library
                 </button>
-
                 <button class="nav-btn" id="favoriteBtn">
                     <span>♡</span>
                     Favorites
@@ -42,7 +43,6 @@
                     Add your favorite songs and enjoy your music.
                 </small>
             </div>
-
         </aside>
 
 
@@ -53,14 +53,23 @@
             <header class="header">
 
                 <div>
-                    <small class="label">YOUR LIBRARY</small>
-                    <h2 id="pageTitle">My Music</h2>
+
+                    <small class="label">
+                        YOUR LIBRARY
+                    </small>
+
+                    <h2 id="pageTitle">
+                        My Music
+                    </h2>
+
                 </div>
+
 
                 <label for="musicInput" class="add-btn">
                     <span>＋</span>
                     Add Music
                 </label>
+
 
                 <input type="file" id="musicInput" accept="audio/*" multiple hidden>
 
@@ -74,15 +83,18 @@
                     ♪
                 </div>
 
+
                 <div class="player-info">
 
                     <small class="now-playing">
                         NOW PLAYING
                     </small>
 
+
                     <h3 id="songTitle">
                         No Song Selected
                     </h3>
+
 
                     <p id="artist">
                         Add music to start listening
@@ -93,12 +105,22 @@
                     <div class="progress-container">
 
                         <div class="progress-bar" id="progressBar">
+
                             <div class="progress" id="progress"></div>
+
                         </div>
 
+
                         <div class="time">
-                            <span id="currentTime">0:00</span>
-                            <span id="duration">0:00</span>
+
+                            <span id="currentTime">
+                                0:00
+                            </span>
+
+                            <span id="duration">
+                                0:00
+                            </span>
+
                         </div>
 
                     </div>
@@ -111,9 +133,11 @@
                             ⏮
                         </button>
 
+
                         <button id="playBtn" class="play" title="Play">
                             ▶
                         </button>
+
 
                         <button id="nextBtn" class="control" title="Next">
                             ⏭
@@ -132,6 +156,7 @@
                 <div class="playlist-header">
 
                     <div>
+
                         <h3 id="playlistTitle">
                             Your Songs
                         </h3>
@@ -139,6 +164,7 @@
                         <span id="songCount">
                             0 songs
                         </span>
+
                     </div>
 
 
@@ -164,12 +190,15 @@
                         🎵
                     </div>
 
+
                     <h4>
                         Your playlist is empty
                     </h4>
 
+
                     <p>
-                        Click <strong>Add Music</strong>
+                        Click
+                        <strong>Add Music</strong>
                         to choose songs from your computer.
                     </p>
 
@@ -184,6 +213,7 @@
 
     <!-- AUDIO -->
     <audio id="audio"></audio>
+
 
     <script src="../JS/music.js"></script>
 
