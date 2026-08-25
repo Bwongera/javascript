@@ -32,7 +32,8 @@ header {
     width: 25%;
     position: relative;
 }
-.search i{
+
+.search i {
     position: absolute;
     top: 5px;
     left: 10px;
@@ -47,31 +48,67 @@ header {
     border-radius: 8px;
 }
 
-main{
-padding: 20px 60px;
+main {
+    padding: 20px 60px;
 }
-table{
+
+table {
     width: 100%;
     border-collapse: collapse;
     border: 2px solid gray;
 }
 
-table thead tr th{
+table thead tr th {
     text-align: left;
     padding: 5px;
     border: 1px solid gray;
-    background-color: rgb(37,35,56);
+    background-color: rgb(37, 35, 56);
     color: white;
 }
 
-table tbody tr td{
+table tbody tr td {
     padding: 5px;
 }
 
-tbody tr:nth-child(odd){
+tbody tr:nth-child(odd) {
     background-color: white;
 }
 
-tbody tr:nth-child(even){
+tbody tr:nth-child(even) {
     background-color: gray;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+}
+
+form {
+    background-color: rgb(37, 35, 56);
+    position: absolute;
+    color: white;
+    padding: 30px;
+    margin: auto;
+    width: 500px;
+    left: 20%;
+    top: 25%;
+
+}
+
+.form-input {
+    color: gray;
+    margin: 10px 10px;
+    outline: none;
+}
+
+.form-button {
+    background-color: red;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-weight: 900;
+    color: white;
+
+
 }

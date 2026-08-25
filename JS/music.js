@@ -1,113 +1,63 @@
 const audio = document.getElementById("audio");
-
 const musicInput = document.getElementById("musicInput");
-
 const songsContainer = document.getElementById("songs");
-
 const empty = document.getElementById("empty");
-
 const songCount = document.getElementById("songCount");
 
 const songTitle = document.getElementById("songTitle");
-
 const artist = document.getElementById("artist");
-
 const cover = document.getElementById("cover");
-
 const playBtn = document.getElementById("playBtn");
-
 const previousBtn = document.getElementById("previousBtn");
 
 const nextBtn = document.getElementById("nextBtn");
-
 const progressBar = document.getElementById("progressBar");
-
 const progress = document.getElementById("progress");
-
 const currentTime = document.getElementById("currentTime");
-
 const duration = document.getElementById("duration");
 
 const volume = document.getElementById("volume");
-
 const libraryBtn = document.getElementById("libraryBtn");
-
 const favoriteBtn = document.getElementById("favoriteBtn");
-
 const pageTitle = document.getElementById("pageTitle");
-
 const playlistTitle = document.getElementById("playlistTitle");
 
-
-/* =====================================================
-   VARIABLES
-===================================================== */
-
 let songs = [];
-
 let currentSongIndex = -1;
-
 let favorites = [];
-
 let currentPage = "library";
-
 let db = null;
-
 let currentObjectUrl = null;
 
-
-/* =====================================================
-   DATABASE
-===================================================== */
-
 const DB_NAME = "VibeVaultMusicDB";
-
 const DB_VERSION = 1;
-
 const STORE_NAME = "songs";
 
-
-/* =====================================================
-   OPEN DATABASE
-===================================================== */
-
 function openDatabase() {
-
     return new Promise(function (resolve, reject) {
-
         if (!window.indexedDB) {
-
             reject(
                 new Error(
                     "IndexedDB is not supported by this browser."
                 )
             );
-
             return;
-
         }
-
-
         const request =
             indexedDB.open(
                 DB_NAME,
                 DB_VERSION
             );
-
-
         request.onupgradeneeded =
             function (event) {
 
                 const database =
                     event.target.result;
-
-
                 if (
                     !database.objectStoreNames.contains(
                         STORE_NAME
                     )
                 ) {
-
                     const store =
                         database.createObjectStore(
                             STORE_NAME,
@@ -116,8 +66,6 @@ function openDatabase() {
                                 autoIncrement: true
                             }
                         );
-
-
                     store.createIndex(
                         "addedAt",
                         "addedAt",
@@ -125,226 +73,134 @@ function openDatabase() {
                             unique: false
                         }
                     );
-
                 }
-
             };
-
-
         request.onsuccess =
             function (event) {
-
                 db =
                     event.target.result;
-
-
                 db.onversionchange =
                     function () {
-
                         db.close();
-
                     };
-
-
                 resolve(db);
-
             };
-
-
         request.onerror =
             function () {
-
                 reject(
                     request.error
                 );
-
             };
-
     });
-
 }
 
 
-/* =====================================================
-   SAVE SONG
-===================================================== */
-
 function saveSong(song) {
-
     return new Promise(
         function (resolve, reject) {
-
             const transaction =
                 db.transaction(
                     STORE_NAME,
                     "readwrite"
                 );
-
-
             const store =
                 transaction.objectStore(
                     STORE_NAME
                 );
-
-
             const request =
                 store.add({
-
                     name:
                         song.name,
-
                     artist:
                         song.artist,
-
                     file:
                         song.file,
-
                     addedAt:
                         Date.now()
-
                 });
-
-
             request.onsuccess =
                 function () {
-
                     resolve(
                         request.result
                     );
-
                 };
-
-
             request.onerror =
                 function () {
-
                     reject(
                         request.error
                     );
-
                 };
-
         }
     );
-
 }
 
-
-/* =====================================================
-   GET ALL SONGS
-===================================================== */
-
 function getAllSongs() {
-
     return new Promise(
         function (resolve, reject) {
-
             const transaction =
                 db.transaction(
                     STORE_NAME,
                     "readonly"
                 );
-
-
             const store =
                 transaction.objectStore(
                     STORE_NAME
                 );
-
-
             const request =
                 store.getAll();
-
-
-            request.onsuccess =
+           request.onsuccess =
                 function () {
-
                     resolve(
                         request.result
                     );
-
                 };
-
-
             request.onerror =
                 function () {
-
                     reject(
                         request.error
                     );
-
                 };
-
         }
     );
-
 }
 
-
-/* =====================================================
-   DELETE SONG FROM DATABASE
-===================================================== */
-
 function deleteSong(id) {
-
     return new Promise(
         function (resolve, reject) {
-
             const transaction =
                 db.transaction(
                     STORE_NAME,
                     "readwrite"
                 );
-
-
             const store =
                 transaction.objectStore(
                     STORE_NAME
                 );
-
-
             const request =
                 store.delete(id);
-
-
             request.onsuccess =
                 function () {
-
                     resolve();
 
                 };
-
-
             request.onerror =
                 function () {
-
                     reject(
                         request.error
                     );
-
                 };
-
         }
     );
-
 }
 
-
-/* =====================================================
-   LOCAL STORAGE
-===================================================== */
-
 function saveFavorites() {
-
     localStorage.setItem(
         "vibeVaultFavorites",
         JSON.stringify(
             favorites
         )
     );
-
 }
-
 
 function loadFavorites() {
 
@@ -352,40 +208,25 @@ function loadFavorites() {
         localStorage.getItem(
             "vibeVaultFavorites"
         );
-
-
     if (!saved) {
-
         favorites = [];
-
         return;
-
     }
-
-
     try {
-
         favorites =
             JSON.parse(saved);
-
         if (!Array.isArray(favorites)) {
-
             favorites = [];
 
         }
 
     } catch (error) {
-
         favorites = [];
 
     }
 
 }
 
-
-/* =====================================================
-   CURRENT SONG
-===================================================== */
 
 function saveCurrentSong() {
 
@@ -402,7 +243,6 @@ function saveCurrentSong() {
 
     }
 
-
     localStorage.setItem(
         "vibeVaultCurrentSongId",
         String(
@@ -412,30 +252,20 @@ function saveCurrentSong() {
 
 }
 
-
 function getSavedCurrentSongId() {
-
     const saved =
         localStorage.getItem(
             "vibeVaultCurrentSongId"
         );
 
-
     if (!saved) {
-
         return null;
 
     }
 
-
     return Number(saved);
 
 }
-
-
-/* =====================================================
-   SAVE PLAY POSITION
-===================================================== */
 
 function savePlaybackPosition() {
 
@@ -443,118 +273,66 @@ function savePlaybackPosition() {
         currentSongIndex < 0 ||
         !songs[currentSongIndex]
     ) {
-
         return;
-
     }
-
 
     const song =
         songs[currentSongIndex];
-
-
     localStorage.setItem(
         "vibeVaultPosition_" + song.id,
         String(
             audio.currentTime || 0
         )
     );
-
 }
 
-
-/* =====================================================
-   GET PLAY POSITION
-===================================================== */
-
 function getPlaybackPosition(id) {
-
     const saved =
         localStorage.getItem(
             "vibeVaultPosition_" + id
         );
-
-
     if (!saved) {
-
         return 0;
-
     }
-
-
     const position =
         Number(saved);
-
-
     if (!Number.isFinite(position)) {
-
         return 0;
-
     }
-
-
     return position;
-
 }
-
-
-/* =====================================================
-   DELETE SAVED POSITION
-===================================================== */
 
 function deleteSavedPosition(id) {
 
-    localStorage.removeItem(
+   localStorage.removeItem(
         "vibeVaultPosition_" + id
     );
-
 }
 
-
-/* =====================================================
-   VOLUME
-===================================================== */
-
 function loadVolume() {
-
     const saved =
         localStorage.getItem(
             "vibeVaultVolume"
         );
-
-
     if (saved === null) {
-
         audio.volume = 0.8;
-
         volume.value = 0.8;
-
         return;
-
     }
-
-
     const value =
         Number(saved);
-
-
     if (
         Number.isFinite(value) &&
         value >= 0 &&
         value <= 1
     ) {
-
         audio.volume =
             value;
-
         volume.value =
             value;
-
     } else {
-
         audio.volume =
             0.8;
-
         volume.value =
             0.8;
 
@@ -562,21 +340,15 @@ function loadVolume() {
 
 }
 
-
 volume.addEventListener(
     "input",
     function () {
-
         const value =
             Number(
                 this.value
             );
-
-
         audio.volume =
             value;
-
-
         localStorage.setItem(
             "vibeVaultVolume",
             String(value)
@@ -585,33 +357,18 @@ volume.addEventListener(
     }
 );
 
-
-/* =====================================================
-   CREATE OBJECT URL
-===================================================== */
-
 function createSongUrl(file) {
-
     return URL.createObjectURL(
         file
     );
 
 }
 
-
-/* =====================================================
-   LOAD SONGS FROM DATABASE
-===================================================== */
-
 async function loadSongs() {
-
     const storedSongs =
         await getAllSongs();
-
-
     storedSongs.sort(
         function (a, b) {
-
             return a.addedAt -
                 b.addedAt;
 
@@ -641,36 +398,23 @@ async function loadSongs() {
                         createSongUrl(
                             song.file
                         )
-
                 };
-
             }
         );
-
 }
-
-
-/* =====================================================
-   ADD MUSIC
-===================================================== */
 
 musicInput.addEventListener(
     "change",
     async function () {
-
         const files =
             Array.from(
                 this.files
             );
-
-
         if (files.length === 0) {
 
             return;
 
         }
-
-
         for (const file of files) {
 
             if (
@@ -678,12 +422,9 @@ musicInput.addEventListener(
                     "audio/"
                 )
             ) {
-
                 continue;
 
             }
-
-
             const song = {
 
                 name:
@@ -705,7 +446,6 @@ musicInput.addEventListener(
 
             };
 
-
             try {
 
                 const id =
@@ -713,11 +453,8 @@ musicInput.addEventListener(
                         song
                     );
 
-
                 song.id =
                     id;
-
-
                 songs.push(
                     song
                 );
@@ -728,11 +465,8 @@ musicInput.addEventListener(
                     "Could not save song:",
                     error
                 );
-
             }
-
         }
-
 
         if (
             currentSongIndex === -1 &&
@@ -745,85 +479,56 @@ musicInput.addEventListener(
             );
 
         }
-
-
         displaySongs();
-
-
         this.value = "";
 
     }
 );
 
-
-/* =====================================================
-   LOAD SONG
-===================================================== */
-
 function loadSong(
     index,
     autoPlay = false
 ) {
-
     if (songs.length === 0) {
 
         return;
 
     }
 
-
     if (currentObjectUrl) {
 
-        /*
-         * Do not revoke the current URL
-         * while it is still needed.
-         */
-
     }
-
 
     currentSongIndex =
         (index + songs.length) %
         songs.length;
 
-
     const song =
         songs[currentSongIndex];
-
 
     audio.src =
         song.url;
 
-
     songTitle.textContent =
         song.name;
 
-
     artist.textContent =
         song.artist;
-
-
     cover.textContent =
         "♪";
-
 
     progress.style.width =
         "0%";
 
-
     currentTime.textContent =
         "0:00";
-
 
     duration.textContent =
         "0:00";
 
-
     saveCurrentSong();
 
-
     displaySongs();
-
 
     if (autoPlay) {
 
@@ -841,11 +546,6 @@ function loadSong(
     }
 
 }
-
-
-/* =====================================================
-   RESTORE CURRENT SONG
-===================================================== */
 
 function restoreCurrentSong() {
 

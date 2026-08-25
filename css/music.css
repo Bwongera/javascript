@@ -288,11 +288,9 @@ nav {
     border-radius: 20px;
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             #171c29,
-            #11151f
-        );
+            #11151f);
 
     display: flex;
 
@@ -317,11 +315,9 @@ nav {
     border-radius: 15px;
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             #8b5cf6,
-            #4338ca
-        );
+            #4338ca);
 
     font-size: 75px;
 
@@ -599,11 +595,9 @@ nav {
     border-radius: 8px;
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             #6d28d9,
-            #312e81
-        );
+            #312e81);
 
     font-size: 17px;
 }
