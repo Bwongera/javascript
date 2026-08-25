@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Attendance Scanner</title>
+    <link rel="stylesheet" href="../css/qr-scanner.css">
+</head>
+<body>
+
+    <main class="scanner-container">
+
+        <h1>QR Attendance Scanner</h1>
+
+        <p class="today">
+            Date: <span id="current-date"></span>
+        </p>
+
+        <div id="reader"></div>
+
+        <div class="buttons">
+            <button id="start-btn">Start Scanner</button>
+            <button id="stop-btn">Stop Scanner</button>
+        </div>
+
+        <div id="result" class="result">
+            Scan a student's QR code
+        </div>
+
+        <div class="attendance-info">
+            <p>Student ID: <span id="student-id">---</span></p>
+            <p>Time: <span id="scan-time">---</span></p>
+            <p>Status: <span id="status">---</span></p>
+            <p>Date: <span id="attendance-date">---</span></p>
+        </div>
+
+    </main>
+
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="../JS/qr-scanner.js"></script>
+
+</body>
+</html>

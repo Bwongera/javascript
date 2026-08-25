@@ -79,7 +79,7 @@
 
 // console.log(courses.length)
 
-// // console.log(courses.toString())
+
 // console.log(courses.join(" | "))
 
 
@@ -102,7 +102,7 @@
 
 
 
-// const students = [
+// const students15= [
 //   'Manzi Mugisha',
 //   'Delphine',
 //   'Bikorimana',

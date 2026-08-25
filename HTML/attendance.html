@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Attendance System</title>
+
+  <link rel="stylesheet" href="../css/attendance.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="logo">
+        <div class="logo-icon">A</div>
+        <div>
+          <h2>Attend<span>Pro</span></h2>
+          <p>Attendance System</p>
+        </div>
+      </div>
+
+      <nav class="navigation">
+
+        <a href="#dashboard" class="nav-link active" data-section="dashboard">
+          <span>▦</span>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="#attendance" class="nav-link" data-section="attendance">
+          <span>✓</span>
+          <span>Attendance</span>
+        </a>
+
+        <a href="#students" class="nav-link" data-section="students">
+          <span>♙</span>
+          <span>Students</span>
+        </a>
+
+        <a href="#records" class="nav-link" data-section="records">
+          <span>☷</span>
+          <span>Records</span>
+        </a>
+
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="system-status">
+          <span class="status-dot"></span>
+          <div>
+            <strong>System Online</strong>
+            <small>All systems operational</small>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- TOP BAR -->
+      <header class="topbar">
+
+        <div class="mobile-logo">
+          <div class="logo-icon">A</div>
+          <strong>Attend<span>Pro</span></strong>
+        </div>
+
+        <div class="topbar-right">
+
+          <div class="current-date">
+            <span>📅</span>
+            <div>
+              <strong id="headerDate">Loading...</strong>
+              <small id="headerTime">00:00:00</small>
+            </div>
+          </div>
+
+          <div class="profile">
+            <div class="profile-avatar">A</div>
+            <div class="profile-info">
+              <strong>Administrator</strong>
+              <small>Admin</small>
+            </div>
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <!-- DASHBOARD -->
+      <section id="dashboard" class="page-section active-section">
+
+        <div class="page-heading">
+          <div>
+            <p class="welcome">WELCOME BACK</p>
+            <h1>Attendance Dashboard</h1>
+            <p class="subtitle">
+              Monitor student attendance and manage records easily.
+            </p>
+          </div>
+
+          <button class="primary-btn" id="goAttendanceBtn">
+            + Take Attendance
+          </button>
+        </div>
+
+
+        <!-- STATISTICS -->
+        <div class="stats-grid">
+
+          <div class="stat-card">
+            <div class="stat-icon students-icon">♙</div>
+            <div>
+              <span>Total Students</span>
+              <strong id="totalStudents">0</strong>
+              <small>Registered students</small>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon present-icon">✓</div>
+            <div>
+              <span>Present Today</span>
+              <strong id="presentToday">0</strong>
+              <small>Students present</small>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon late-icon">◷</div>
+            <div>
+              <span>Late Today</span>
+              <strong id="lateToday">0</strong>
+              <small>Students late</small>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon absent-icon">×</div>
+            <div>
+              <span>Absent Today</span>
+              <strong id="absentToday">0</strong>
+              <small>Students absent</small>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- QUICK ATTENDANCE -->
+        <div class="content-grid">
+
+          <div class="panel quick-panel">
+
+            <div class="panel-header">
+              <div>
+                <h2>Quick Attendance</h2>
+                <p>Record student attendance manually.</p>
+              </div>
+            </div>
+
+            <form id="quickAttendanceForm">
+
+              <div class="form-group">
+                <label for="quickStudentId">Student ID</label>
+                <input
+                  type="text"
+                  id="quickStudentId"
+                  placeholder="e.g. STU001"
+                  autocomplete="off"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="quickStudentName">Student Name</label>
+                <input
+                  type="text"
+                  id="quickStudentName"
+                  placeholder="Enter student name"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="quickStatus">Status</label>
+
+                <select id="quickStatus">
+                  <option value="Present">Present</option>
+                  <option value="Late">Late</option>
+                  <option value="Absent">Absent</option>
+                </select>
+              </div>
+
+              <button type="submit" class="primary-btn full-btn">
+                Save Attendance
+              </button>
+
+            </form>
+
+          </div>
+
+
+          <!-- TODAY -->
+          <div class="panel today-panel">
+
+            <div class="panel-header">
+              <div>
+                <h2>Today's Summary</h2>
+                <p id="summaryDate">Loading...</p>
+              </div>
+            </div>
+
+            <div class="summary-list">
+
+              <div class="summary-item">
+                <div class="summary-left">
+                  <span class="summary-circle present-circle">✓</span>
+                  <span>Present</span>
+                </div>
+
+                <strong id="summaryPresent">0</strong>
+              </div>
+
+              <div class="summary-item">
+                <div class="summary-left">
+                  <span class="summary-circle late-circle">◷</span>
+                  <span>Late</span>
+                </div>
+
+                <strong id="summaryLate">0</strong>
+              </div>
+
+              <div class="summary-item">
+                <div class="summary-left">
+                  <span class="summary-circle absent-circle">×</span>
+                  <span>Absent</span>
+                </div>
+
+                <strong id="summaryAbsent">0</strong>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- RECENT RECORDS -->
+        <div class="panel recent-panel">
+
+          <div class="panel-header">
+
+            <div>
+              <h2>Recent Attendance</h2>
+              <p>Latest attendance records</p>
+            </div>
+
+            <button class="text-btn" id="viewAllBtn">
+              View All
+            </button>
+
+          </div>
+
+          <div class="table-wrapper">
+
+            <table>
+
+              <thead>
+                <tr>
+                  <th>Student ID</th>
+                  <th>Student Name</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+
+              <tbody id="recentTableBody"></tbody>
+
+            </table>
+
+          </div>
+
+          <div id="recentEmpty" class="empty-state">
+            <div>☷</div>
+            <p>No attendance records yet.</p>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ATTENDANCE SECTION -->
+      <section id="attendance" class="page-section">
+
+        <div class="page-heading">
+
+          <div>
+            <p class="welcome">ATTENDANCE</p>
+            <h1>Take Attendance</h1>
+            <p class="subtitle">
+              Manually record attendance for students.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="panel attendance-form-panel">
+
+          <form id="attendanceForm">
+
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label for="studentId">Student ID</label>
+                <input
+                  type="text"
+                  id="studentId"
+                  placeholder="Enter student ID"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="studentName">Student Name</label>
+                <input
+                  type="text"
+                  id="studentName"
+                  placeholder="Enter student full name"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="attendanceDate">Date</label>
+                <input
+                  type="date"
+                  id="attendanceDate"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="attendanceStatus">Attendance Status</label>
+
+                <select id="attendanceStatus">
+
+                  <option value="Present">
+                    Present
+                  </option>
+
+                  <option value="Late">
+                    Late
+                  </option>
+
+                  <option value="Absent">
+                    Absent
+                  </option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+            <button type="submit" class="primary-btn">
+              Save Attendance
+            </button>
+
+          </form>
+
+        </div>
+
+
+        <div class="panel">
+
+          <div class="panel-header">
+
+            <div>
+              <h2>Attendance Instructions</h2>
+              <p>Use the form above to record attendance.</p>
+            </div>
+
+          </div>
+
+          <div class="instructions">
+
+            <div class="instruction">
+              <span>1</span>
+              <p>Enter the student's ID.</p>
+            </div>
+
+            <div class="instruction">
+              <span>2</span>
+              <p>Enter the student's full name.</p>
+            </div>
+
+            <div class="instruction">
+              <span>3</span>
+              <p>Select the attendance status.</p>
+            </div>
+
+            <div class="instruction">
+              <span>4</span>
+              <p>Click "Save Attendance".</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- STUDENTS -->
+      <section id="students" class="page-section">
+
+        <div class="page-heading">
+
+          <div>
+            <p class="welcome">STUDENTS</p>
+            <h1>Student Management</h1>
+            <p class="subtitle">
+              Register students and manage student information.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="panel">
+
+          <div class="panel-header">
+
+            <div>
+              <h2>Register Student</h2>
+              <p>Add a new student to the system.</p>
+            </div>
+
+          </div>
+
+
+          <form id="studentForm">
+
+            <div class="form-grid">
+
+              <div class="form-group">
+
+                <label for="registerStudentId">
+                  Student ID
+                </label>
+
+                <input
+                  type="text"
+                  id="registerStudentId"
+                  placeholder="e.g. STU001"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="registerStudentName">
+                  Full Name
+                </label>
+
+                <input
+                  type="text"
+                  id="registerStudentName"
+                  placeholder="Enter student's name"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="registerClass">
+                  Class
+                </label>
+
+                <input
+                  type="text"
+                  id="registerClass"
+                  placeholder="e.g. S5 Computer Science"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+
+            <button type="submit" class="primary-btn">
+              Register Student
+            </button>
+
+          </form>
+
+        </div>
+
+
+        <div class="panel">
+
+          <div class="panel-header">
+
+            <div>
+              <h2>Registered Students</h2>
+              <p>Students currently registered in the system.</p>
+            </div>
+
+          </div>
+
+
+          <div class="table-wrapper">
+
+            <table>
+
+              <thead>
+                <tr>
+                  <th>Student ID</th>
+                  <th>Name</th>
+                  <th>Class</th>
+                  <th>Registered</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody id="studentsTableBody"></tbody>
+
+            </table>
+
+          </div>
+
+
+          <div id="studentsEmpty" class="empty-state">
+            <div>♙</div>
+            <p>No students registered yet.</p>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- RECORDS -->
+      <section id="records" class="page-section">
+
+        <div class="page-heading">
+
+          <div>
+            <p class="welcome">RECORDS</p>
+            <h1>Attendance Records</h1>
+            <p class="subtitle">
+              View and manage all attendance records.
+            </p>
+          </div>
+
+          <button class="danger-btn" id="clearAllBtn">
+            Clear All Records
+          </button>
+
+        </div>
+
+
+        <div class="panel">
+
+          <div class="record-tools">
+
+            <div class="search-box">
+              <span>⌕</span>
+
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search student..."
+              >
+
+            </div>
+
+
+            <select id="statusFilter">
+
+              <option value="All">
+                All Status
+              </option>
+
+              <option value="Present">
+                Present
+              </option>
+
+              <option value="Late">
+                Late
+              </option>
+
+              <option value="Absent">
+                Absent
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="table-wrapper">
+
+            <table>
+
+              <thead>
+
+                <tr>
+                  <th>Student ID</th>
+                  <th>Student Name</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+
+              </thead>
+
+              <tbody id="recordsTableBody"></tbody>
+
+            </table>
+
+          </div>
+
+
+          <div id="recordsEmpty" class="empty-state">
+            <div>☷</div>
+            <p>No attendance records found.</p>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- TOAST -->
+  <div id="toast" class="toast">
+    <span id="toastIcon">✓</span>
+    <span id="toastMessage">Saved successfully.</span>
+  </div>
+
+
+  <script src="../JS/attendance.js"></script>
+
+</body>
+</html>

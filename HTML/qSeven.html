@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/qSeven.css">
+</head>
+<body>
+    
+<div class="container">
+    <h1>Contact us</h1>
+    <form id="contact-form">
+
+        <div>
+            <input type="text" id="name" placeholder="Enter your Name">
+            <span id="validate-name"></span>
+        </div>
+
+        <div>
+           <input type="text" id="email" placeholder="Email your Email">
+            <span id="validate-email"></span> 
+        </div>
+
+        <div>
+            <textarea name="message" id="message" placeholder="Enter your message"></textarea>
+            <span id="validate-message"></span>
+        </div>
+
+        <p></p>
+
+        <button>Send</button>
+
+    </form>
+
+</div>
+
+<div id="display">
+    <h3>All users contact me</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                 <th>Name</th>
+                  <th>Email</th>
+                   <th>Message</th>
+            </tr>
+        </thead>
+
+        <tbody id="message-table"></tbody>
+    </table>
+
+</div>
+
+<script src="../JS/qSeven.js"></script>
+
+</body>
+</html>
