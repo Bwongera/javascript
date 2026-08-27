@@ -85,6 +85,13 @@ button {
     margin-left: 10px;
 }
 
+#submit-button{
+     border-radius: 20px;
+    padding: 5px 10px;
+    font-weight: 900;
+    color: white;
+}
+
 form {
     background-color: rgb(37, 35, 56);
     position: absolute;
@@ -98,13 +105,12 @@ form {
 }
 
 .form-input {
+    padding: 10px;
     color: gray;
     margin: 10px 10px;
-    outline: none;
 }
 
 .form-button {
-    background-color: red;
     border-radius: 20px;
     padding: 5px 10px;
     font-weight: 900;
