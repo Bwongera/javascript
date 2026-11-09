@@ -1,0 +1,100 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #333;
+  color: white;
+}
+
+/* Read rows */
+tr[class="read"] {
+  background-image: linear-gradient(to right, #d4edda, #ffffff);
+}
+
+/* To-read rows */
+tr[class="to-read"] {
+  background-image: linear-gradient(to right, #fff3cd, #ffffff);
+}
+
+/* In-progress rows */
+tr[class="in-progress"] {
+  background-image: linear-gradient(to right, #cce5ff, #ffffff);
+}
+
+/* All spans */
+span {
+  display: inline-block;
+}
+
+/* To-read status */
+tr[class="to-read"] span[class="status"] {
+  border: 2px solid #d39e00;
+  background-image: linear-gradient(to right, #fff3cd, #ffe08a);
+}
+
+/* Read status */
+tr[class="read"] span[class="status"] {
+  border: 2px solid #28a745;
+  background-image: linear-gradient(to right, #d4edda, #a8dfb5);
+}
+
+/* In-progress status */
+tr[class="in-progress"] span[class="status"] {
+  border: 2px solid #007bff;
+  background-image: linear-gradient(to right, #cce5ff, #80bdff);
+}
+
+/* Status and rate */
+span[class="status"],
+span[class^="rate"] {
+  height: 25px;
+  width: 100px;
+  padding: 5px;
+}
+
+/* Rate circles */
+span[class^="rate"] > span {
+  border: 1px solid #333;
+  border-radius: 50%;
+  margin: 2px;
+  height: 12px;
+  width: 12px;
+  background-color: #ddd;
+}
+
+/* One star */
+span[class~="one"] > span:first-child {
+  background-image: linear-gradient(to bottom, gold, orange);
+}
+
+/* Two stars */
+span[class~="two"] > span:nth-child(-n+2) {
+  background-image: linear-gradient(to bottom, gold, orange);
+}
+
+/* Three stars */
+span[class~="three"] > span {
+  background-image: linear-gradient(to bottom, gold, orange);
+}
