@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Mark Grading</title>
+
+    <link rel="stylesheet" href="../css/mark.css">
+</head>
+
+<body>
+
+    <div class="form-container">
+
+        <form id="Enter-mark-form">
+
+            <div class="form-header">
+                <h2 class="form-title">Student Grading</h2>
+                <p>Enter your marks to see your result</p>
+            </div>
+
+            <div class="input-group">
+                <label for="marks">Enter Marks</label>
+
+                <input type="number" id="marks" name="mark" placeholder="Enter marks (0 - 100)" min="0" max="100"
+                    step="any" required>
+            </div>
+
+            <button class="form-button" type="submit">
+                Result
+            </button>
+
+            <div class="result-container" id="result-container" aria-live="polite">
+                <h3>Your Result</h3>
+                <p id="result">Your grade will appear here.</p>
+            </div>
+
+        </form>
+
+    </div>
+
+    <script src="../JS/mark.js"></script>
+
+</body>
+
+</html>
